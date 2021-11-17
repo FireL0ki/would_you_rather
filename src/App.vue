@@ -8,10 +8,12 @@
     <would-you-rather v-bind:question="wyrQuestion"
     v-bind:answer1="wyrAnswer1"
     v-bind:answer2="wyrAnswer2"
-    >
-      </would-you-rather>  
+    v-on:answer-changed="answerChanged">
+    </would-you-rather>  
     <!-- 'app' is the main page, WouldYouRather is inside it,
     we need to specifiy that app should show this component-->
+
+    <p>{{ userSelectionMessage }}</p>
 
   </div>
 </template>
@@ -31,11 +33,21 @@ export default {
       wyrAnswer2: 'Superhero',
       userSelectionMessage: ''
     }
+  },
+  methods: {
+    answerChanged(choice) {
+      this.userSelectionMessage = `Thanks! You chose ${choice}`
+    }
   }
 }
 </script>
 
 <style>
+
+body {
+  background: rgb(137, 116, 231);
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -43,5 +55,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  background: rgb(116, 231, 226);
 }
 </style>
