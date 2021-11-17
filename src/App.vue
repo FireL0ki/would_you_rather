@@ -1,15 +1,36 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<template>  <!-- template tag needs to have exactly one child element -->
+  <div id="app">
+
+    <h1>Would you rather?</h1>
+
+    <!-- you can use the uppercase style, but the dashes between is the convention for writing vue tagnames
+    There is no valid HTML tag with dashes-->
+    <would-you-rather v-bind:question="wyrQuestion"
+    v-bind:answer1="wyrAnswer1"
+    v-bind:answer2="wyrAnswer2"
+    >
+      </would-you-rather>  
+    <!-- 'app' is the main page, WouldYouRather is inside it,
+    we need to specifiy that app should show this component-->
+
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import WouldYouRather from './components/WouldYouRather.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    WouldYouRather
+  },
+  data() {
+    return {
+      wyrQuestion: 'Would you rather be a wizard or a superhero?',
+      wyrAnswer1: 'Wizard',
+      wyrAnswer2: 'Superhero',
+      userSelectionMessage: ''
+    }
   }
 }
 </script>
