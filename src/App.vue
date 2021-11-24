@@ -16,6 +16,7 @@
     <p>{{ userSelectionMessage }}</p>
 
   </div>
+  
 </template>
 
 <script>
