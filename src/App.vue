@@ -5,7 +5,7 @@
 
     <!-- you can use the uppercase style, but the dashes between is the convention for writing vue tagnames
     There is no valid HTML tag with dashes-->
-    <would-you-rather v-bind:question="wyrQuestion"
+    <would-you-rather v-bind:question="wyrQuestion1"
     v-bind:answer1="wyrAnswer1"
     v-bind:answer2="wyrAnswer2"
     v-on:answer-changed="answerChanged">
@@ -27,12 +27,30 @@ export default {
   components: {
     WouldYouRather
   },
+  // Create a questions array to hold all the questions/possible answers
   data() {
     return {
-      wyrQuestion: 'Would you rather be a wizard or a superhero?',
-      wyrAnswer1: 'Wizard',
-      wyrAnswer2: 'Superhero',
-      userSelectionMessage: ''
+      questionsArray: [
+        {
+          id: 0,
+          wyrQuestion: 'Would you rather be a wizard or a superhero?',
+          wyrAnswer1: 'Wizard',
+          wyrAnswer2: 'Superhero',
+          // userSelectionMessage: ''
+        },
+        {
+          id: 1,
+          wyrQuestion: 'Would you rather have a full suit of armour or a horse?',
+          wyrAnswer1: 'A full suit of armour',
+          wyrAnswer2: 'A horse',
+        },
+        {
+          id: 2,
+          wyrQuestion: 'Would you rather have eyes that change color depending on your mood or hair that changes color depending on the temperature?',
+          wyrAnswer1: 'Eyes that change color depending on mood',
+          wyrAnswer2: 'Hair that changes color depending on temperature',
+        }
+      ]
     }
   },
   methods: {
