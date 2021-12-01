@@ -5,7 +5,18 @@
 
     <!-- you can use the uppercase style, but the dashes between is the convention for writing vue tagnames
     There is no valid HTML tag with dashes-->
-    <would-you-rather v-bind:question="wyrQuestion1"
+
+    <!-- TODO v-for to loop over the list of questions & answers -->
+    <div v-for="(question) in questionsArray" :key="question.id">
+      <!-- v-bind:question="wyrQuestion"
+      v-bind:answer1="wyrAnswer1"
+      v-bind:answer2="wyrAnswer2"> -->
+      {{ question.wyrQuestion }}
+      {{ question.wyrAnswer1 }}
+      {{ question.wyrAnswer2 }}
+    </div>
+
+    <would-you-rather v-bind:question="wyrQuestion"
     v-bind:answer1="wyrAnswer1"
     v-bind:answer2="wyrAnswer2"
     v-on:answer-changed="answerChanged">
@@ -13,6 +24,7 @@
     <!-- 'app' is the main page, WouldYouRather is inside it,
     we need to specifiy that app should show this component-->
 
+    <!-- tied to v-for? -->
     <p>{{ userSelectionMessage }}</p>
 
   </div>

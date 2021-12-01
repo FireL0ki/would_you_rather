@@ -11,6 +11,20 @@
     <input type="radio" v-model="choice" v-bind:value="answer2" v-on:change="choiceMade">
     <label>{{ answer2 }}</label>
 
+    <!-- Question 2 -->
+    <input type="radio" v-model="choice" v-bind:value="answer1" v-on:change="choiceMade">
+    <label>{{ answer1 }}</label>
+
+    <input type="radio" v-model="choice" v-bind:value="answer2" v-on:change="choiceMade">
+    <label>{{ answer2 }}</label>
+
+    <!-- Question 3 -->
+    <input type="radio" v-model="choice" v-bind:value="answer1" v-on:change="choiceMade">
+    <label>{{ answer1 }}</label>
+
+    <input type="radio" v-model="choice" v-bind:value="answer2" v-on:change="choiceMade">
+    <label>{{ answer2 }}</label>
+
   </div>
 </template>
 
