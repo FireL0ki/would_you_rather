@@ -11,22 +11,23 @@
     <input type="radio" v-model="choice" v-bind:value="answer2" v-on:change="choiceMade">
     <label>{{ answer2 }}</label>
 
-    <!-- Question 2 -->
-    <input type="radio" v-model="choice" v-bind:value="answer1" v-on:change="choiceMade">
-    <label>{{ answer1 }}</label>
-
-    <input type="radio" v-model="choice" v-bind:value="answer2" v-on:change="choiceMade">
-    <label>{{ answer2 }}</label>
-
-    <!-- Question 3 -->
-    <input type="radio" v-model="choice" v-bind:value="answer1" v-on:change="choiceMade">
-    <label>{{ answer1 }}</label>
-
-    <input type="radio" v-model="choice" v-bind:value="answer2" v-on:change="choiceMade">
-    <label>{{ answer2 }}</label>
-
   </div>
+
+
+  <!-- TODO don't attach this to each question set -->
+  <div class="user-responses">
+
+    <h2>You Would Rather...</h2>
+
+    <li>{{ response }}</li>
+    <li>{{ response }}</li>
+    <li>{{ response }}</li>
+  
+  </div>
+
 </template>
+
+
 
 <script>
 export default {

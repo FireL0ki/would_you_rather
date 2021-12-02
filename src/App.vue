@@ -7,25 +7,22 @@
     There is no valid HTML tag with dashes-->
 
     <!-- TODO v-for to loop over the list of questions & answers -->
-    <div v-for="(question) in questionsArray" :key="question.id">
-      <!-- v-bind:question="wyrQuestion"
+    <would-you-rather v-for="(question) in questionsArray" :key="question.id"
+      v-bind:question="wyrQuestion"
       v-bind:answer1="wyrAnswer1"
-      v-bind:answer2="wyrAnswer2"> -->
-      {{ question.wyrQuestion }}
+      v-bind:answer2="wyrAnswer2"
+      v-on:answer-changed="answerChanged">
+      <!--TODO not showing up -->
+      {{ questionsArray.wyrQuestion }}
       {{ question.wyrAnswer1 }}
       {{ question.wyrAnswer2 }}
-    </div>
+    </would-you-rather>
 
-    <would-you-rather v-bind:question="wyrQuestion"
-    v-bind:answer1="wyrAnswer1"
-    v-bind:answer2="wyrAnswer2"
-    v-on:answer-changed="answerChanged">
-    </would-you-rather>  
     <!-- 'app' is the main page, WouldYouRather is inside it,
     we need to specifiy that app should show this component-->
 
-    <!-- tied to v-for? -->
-    <p>{{ userSelectionMessage }}</p>
+    <!-- TODO not showing up -->
+    <p> {{ userSelectionMessage }}</p>
 
   </div>
   
@@ -48,7 +45,6 @@ export default {
           wyrQuestion: 'Would you rather be a wizard or a superhero?',
           wyrAnswer1: 'Wizard',
           wyrAnswer2: 'Superhero',
-          // userSelectionMessage: ''
         },
         {
           id: 1,
@@ -62,6 +58,9 @@ export default {
           wyrAnswer1: 'Eyes that change color depending on mood',
           wyrAnswer2: 'Hair that changes color depending on temperature',
         }
+      ],
+      userSelectionsArray: [
+        {}
       ]
     }
   },
