@@ -8,21 +8,19 @@
 
     <!-- TODO v-for to loop over the list of questions & answers -->
     <would-you-rather v-for="(question) in questionsArray" :key="question.id"
-      v-bind:question="wyrQuestion"
-      v-bind:answer1="wyrAnswer1"
-      v-bind:answer2="wyrAnswer2"
+      v-bind:question="question.wyrQuestion"
+      v-bind:answer1="question.wyrAnswer1"
+      v-bind:answer2="question.wyrAnswer2"
       v-on:answer-changed="answerChanged">
-      <!--TODO not showing up -->
-      {{ questionsArray.wyrQuestion }}
-      {{ question.wyrAnswer1 }}
-      {{ question.wyrAnswer2 }}
     </would-you-rather>
+
+
 
     <!-- 'app' is the main page, WouldYouRather is inside it,
     we need to specifiy that app should show this component-->
 
     <!-- TODO not showing up -->
-    <p> {{ userSelectionMessage }}</p>
+    <p> {{ userSelectionsArray }}</p>
 
   </div>
   
@@ -66,7 +64,13 @@ export default {
   },
   methods: {
     answerChanged(choice) {
-      this.userSelectionMessage = `Thanks! You chose ${choice}`
+      this.userSelectionsArray.push(choice)
+      this.userSelectionMessage = `You Would Rather... ${this.userSelectionsArray}`
+
+      // <li>{{ response }}</li>
+      // <li>{{ response }}</li>
+      // <li>{{ response }}</li>
+
     }
   }
 }
@@ -75,16 +79,17 @@ export default {
 <style>
 
 body {
-  background: rgb(137, 116, 231);
+  background: rgb(78, 44, 230);
 }
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  background: rgb(116, 231, 226);
+  background: rgb(238, 71, 168);
 }
 </style>

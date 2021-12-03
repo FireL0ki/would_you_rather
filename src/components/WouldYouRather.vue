@@ -2,7 +2,6 @@
   <div class="wyr">
     
     <h2>Please make your choice!</h2>
-
     <h3>{{ question }}</h3>
 
     <input type="radio" v-model="choice" v-bind:value="answer1" v-on:change="choiceMade">
@@ -14,19 +13,7 @@
   </div>
 
 
-  <!-- TODO don't attach this to each question set -->
-  <div class="user-responses">
-
-    <h2>You Would Rather...</h2>
-
-    <li>{{ response }}</li>
-    <li>{{ response }}</li>
-    <li>{{ response }}</li>
-  
-  </div>
-
 </template>
-
 
 
 <script>
@@ -57,8 +44,8 @@ h3 {
 }
 
 .wyr {
-  border: 2px black solid;
-  background: rgb(231, 157, 225);
+  border: 1px black solid;
+  background: rgb(248, 216, 156);
 }
 
 </style>
