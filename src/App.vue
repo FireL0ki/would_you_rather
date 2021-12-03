@@ -19,11 +19,13 @@
     <!-- 'app' is the main page, WouldYouRather is inside it,
     we need to specifiy that app should show this component-->
 
-    <!-- TODO create unordered list of selections -->
+    <!-- create unordered list of selections -->
     <p id="ywr"> You Would Rather...</p>
+
+    <!-- loop over userSelectionsArray, put each response in an unordered list. -->
     <ul id="userSelectionsArray">
-      <li v-for="(question) in questionsArray" :key="question.id">
-        {{ userSelectionsArray.id }} 
+      <li v-for="(selection) in userSelectionsArray" :key="selection.id">
+        {{ selection.id }} 
       </li>
     </ul>
 
