@@ -24,8 +24,8 @@
 
     <!-- loop over userSelectionsArray, put each response in an unordered list. -->
     <ul id="userSelectionsArray">
-      <li v-for="(selection) in userSelectionsArray" :key="selection.id">
-        {{ selection.id }} 
+      <li v-for="(selection) in userSelectionsArray">
+        {{ selection }} 
       </li>
     </ul>
 
