@@ -19,8 +19,13 @@
     <!-- 'app' is the main page, WouldYouRather is inside it,
     we need to specifiy that app should show this component-->
 
-    <!-- TODO not showing up -->
-    <p> {{ userSelectionsArray }}</p>
+    <!-- TODO create unordered list of selections -->
+    <p id="ywr"> You Would Rather...</p>
+    <ul id="userSelectionsArray">
+      <li v-for="(question) in questionsArray" :key="question.id">
+        {{ userSelectionsArray.id }} 
+      </li>
+    </ul>
 
   </div>
   
@@ -46,9 +51,9 @@ export default {
         },
         {
           id: 1,
-          wyrQuestion: 'Would you rather have a full suit of armour or a horse?',
-          wyrAnswer1: 'A full suit of armour',
-          wyrAnswer2: 'A horse',
+          wyrQuestion:'Would you rather have a full suit of armour or a horse?',
+          wyrAnswer1: 'Have a full suit of armour',
+          wyrAnswer2: 'Have a horse',
         },
         {
           id: 2,
@@ -64,13 +69,11 @@ export default {
   },
   methods: {
     answerChanged(choice) {
-      this.userSelectionsArray.push(choice)
-      this.userSelectionMessage = `You Would Rather... ${this.userSelectionsArray}`
-
-      // <li>{{ response }}</li>
-      // <li>{{ response }}</li>
-      // <li>{{ response }}</li>
-
+        if (this.userSelectionsArray.includes(choice)) {
+          return
+        } else {
+          this.userSelectionsArray.push(choice)
+        }
     }
   }
 }
@@ -92,4 +95,10 @@ body {
   margin-top: 60px;
   background: rgb(238, 71, 168);
 }
+
+#ywr {
+  font-size: 20px;
+  font-weight: 600;
+}
+
 </style>
