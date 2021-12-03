@@ -45,7 +45,7 @@ h3 {
 
 .wyr {
   border: 1px black solid;
-  background: rgb(248, 216, 156);
+  background: rgb(240, 196, 114); 
 }
 
 </style>

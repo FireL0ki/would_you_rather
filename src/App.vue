@@ -82,7 +82,7 @@ export default {
 <style>
 
 body {
-  background: rgb(78, 44, 230);
+  color: orange;
 }
 
 #app {
@@ -93,7 +93,7 @@ body {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  background: rgb(238, 71, 168);
+  background-image: linear-gradient(to right, rgb(190, 19, 19), rgb(228, 228, 225));
 }
 
 #ywr {
