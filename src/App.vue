@@ -60,8 +60,8 @@ export default {
         {
           id: 2,
           wyrQuestion: 'Would you rather have eyes that change color depending on your mood or hair that changes color depending on the temperature?',
-          wyrAnswer1: 'Eyes that change color depending on mood',
-          wyrAnswer2: 'Hair that changes color depending on temperature',
+          wyrAnswer1: 'Have eyes that change color depending on mood',
+          wyrAnswer2: 'Have hair that changes color depending on temperature',
         }
       ],
       userSelectionsArray: [
