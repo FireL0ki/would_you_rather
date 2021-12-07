@@ -11,9 +11,11 @@
       v-bind:question="question.wyrQuestion"
       v-bind:answer1="question.wyrAnswer1"
       v-bind:answer2="question.wyrAnswer2"
+      
+      v-bind:id="question.id"
+
       v-on:answer-changed="answerChanged">
     </would-you-rather>
-
 
 
     <!-- 'app' is the main page, WouldYouRather is inside it,
@@ -48,8 +50,8 @@ export default {
         {
           id: 0,
           wyrQuestion: 'Would you rather be a wizard or a superhero?',
-          wyrAnswer1: 'Wizard',
-          wyrAnswer2: 'Superhero',
+          wyrAnswer1: 'Be a wizard',
+          wyrAnswer2: 'Be a superhero',
         },
         {
           id: 1,
@@ -65,17 +67,16 @@ export default {
         }
       ],
       userSelectionsArray: [
-      ]
+      ],
     }
   },
   methods: {
-    answerChanged(choice) {
-        if (this.userSelectionsArray.includes(choice)) {
-          return
-        } else {
-          this.userSelectionsArray.push(choice)
-        }
-    }
+    // use question IDs to update user choices-- insert them at correct index (which matches the id#)
+    // replace the old response when a new choice is made for each question
+      answerChanged(choice, id) {
+        this.userSelectionsArray.splice(id, 1, choice)
+      }
+
   }
 }
 </script>

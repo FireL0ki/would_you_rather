@@ -19,10 +19,12 @@
 <script>
 export default {
   name: 'WouldYouRather',
+  // these are the properties that can be passed to the child component
   props: {
     question: String,
     answer1: String,
     answer2: String,
+    id: Number,
   },
   data() {
     return {
@@ -31,7 +33,7 @@ export default {
   },
   methods: {
     choiceMade() {
-      this.$emit('answer-changed', this.choice) 
+      this.$emit('answer-changed', this.choice, this.id) // pass choice & id for tracking over to app.vue
     }
   }
 }
